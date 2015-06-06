@@ -15,6 +15,14 @@ table {
     background: #CCCCCC;
   }
 
+  tr:hover td {
+    background: #EEEEEE;
+  }
+
+  tr:nth-child(1):hover td {
+    background: #CCCCCC;
+  }
+
   td {
     padding: 4px 8px;
   }
