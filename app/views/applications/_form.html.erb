@@ -1,11 +1,38 @@
-<%= simple_form_for [@student, @application] do |f| %>
-  <p>Please complete the application.</p>
-  <div class="form-group">
-    <%= f.input :wl_building, label: "Building", required: true %>
+<%= simple_form_for @application_form, url: student_applications_path(@student) do |f| %>
+
+  <h1>New Application for <%= @student.full_name %></h1>
+  <p><strong>Please note:</strong> If no space is available in your <em>first</em> or <em>second</em> choices, your student will be put on a waitlist. You will not be waitlisted for your third choice.</p>
+
+  <div class="form-group row">
+    <h3 class="col-sm-12">First Choice</h3>
+    <div class="col-md-6">
+      <%= f.input :first_choice_building, label: "School", collection: SCHOOLS, required: true %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :first_choice_program, label: "Program", collection: PROGRAMS, required: true %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.input :wl_program, label: "Program", required: true %>
+
+  <div class="form-group row">
+    <h3 class="col-sm-12">Second Choice</h3>
+    <div class="col-md-6">
+      <%= f.input :second_choice_building, label: "School", collection: SCHOOLS %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :second_choice_program, label: "Program", collection: PROGRAMS %>
+    </div>
   </div>
+
+  <div class="form-group row">
+    <h3 class="col-sm-12">Third Choice</h3>
+    <div class="col-md-6">
+      <%= f.input :third_choice_building, label: "School", collection: SCHOOLS %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :third_choice_program, label: "Program", collection: PROGRAMS %>
+    </div>
+  </div>
+
   <div class="form-actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
