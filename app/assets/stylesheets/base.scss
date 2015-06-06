@@ -34,3 +34,11 @@ dd {
   text-align: center;
   color: #ccc;
 }
+
+.navbar-toggle {
+  background-color: rgba(0,0,0,.1) !important;
+
+  .icon-bar {
+    background-color: #428bca;
+  }
+}
