@@ -1,6 +1,14 @@
-<h1>My Students</h1>
-<p>We'll list a user's students here.</p>
-<ul>
-  <li><%= link_to "Sample Student", student_path(1) %>
-</ul>
-<p><%= link_to "New Student", "#" %>
+<div class="row text-center">
+  <div class="col-sm-12">
+    <h1>My Students</h1>
+    <ul class="student-list">
+      <%= render @students %>
+    </ul>
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col-sm-12">
+    <h3>Is your student not listed here?</h3>
+    <p><%= link_to "Register My Student", new_student_path, class: "btn btn-primary btn-lg" %>
+  </div>
+</div>

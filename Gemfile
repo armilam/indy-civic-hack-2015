@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'paperclip'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
