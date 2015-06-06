@@ -1,4 +1,4 @@
-<h1>Issues</h1>
+<h1>Interactions</h1>
 
 <h3>Search</h3>
 <%= form_tag(admin_issues_search_path, method: "get") do %>
@@ -32,10 +32,10 @@
   </div>
 <% end %>
 
-<h3>My Recent Issues</h3>
-<%= select_tag(:issues, options_for_select([['My recent issues', 1], ['Open issues', 2], ['Closed issues', 3]])) %>
+<h3>My Recent Interactions</h3>
+<%= select_tag(:issues, options_for_select([['My recent interactions', 1], ['Open issues', 2], ['Closed issues', 3]])) %>
 <%= submit_tag("Go") %>
-<table class="search-results issues">
+<table class="issues">
   <thead>
     <td>Regarding</td>
     <td>Owned By</td>
