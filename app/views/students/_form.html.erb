@@ -1,12 +1,16 @@
-<%= simple_form_for @student do |f| %>
-  <p>Please enter your student’s IPS Student ID and birthdate.</p>
-  <div class="form-group">
-    <%= f.input :ips_id, label: "IPS Student ID", required: true %>
+<div class="row">
+  <div class="col-md-4 col-md-push-4">
+    <%= simple_form_for @student do |f| %>
+      <p>Please enter both your student’s IPS Student ID and birthdate to find them in our system.</p>
+      <div class="form-group">
+        <%= f.input :ips_id, label: "IPS Student ID", required: true %>
+      </div>
+      <div class="form-group">
+        <%= f.input :birthdate, start_year: Date.current.year - 2, end_year: Date.current.year - 25, required: true, include_blank: true %>
+      </div>
+      <div class="form-actions">
+        <%= f.submit "Register Student", class: "btn btn-primary" %>
+      </div>
+    <% end %>
   </div>
-  <div class="form-group">
-    <%= f.input :birthdate, start_year: Date.current.year - 2, end_year: Date.current.year - 25, required: true, include_blank: true %>
-  </div>
-  <div class="form-actions">
-    <%= f.submit class: "btn btn-primary" %>
-  </div>
-<% end %>
+</div>

@@ -1,14 +1,20 @@
 <div class="row text-center">
-  <div class="col-sm-12">
-    <h1>My Students</h1>
-    <ul class="student-list">
-      <%= render @students %>
-    </ul>
-  </div>
+  <% if @students.present? %>
+    <div class="col-sm-12">
+      <h1>My Students</h1>
+      <ul class="student-list">
+        <%= render @students %>
+      </ul>
+    </div>
+  <% end %>
 </div>
 <div class="row text-center">
   <div class="col-sm-12">
-    <h3>Is your student not listed here?</h3>
+    <% if @students.present? %>
+      <h3>Is your student not listed here?</h3>
+    <% else %>
+      <h3>Let’s find your student(s) in our system!</h3>
+    <% end %>
     <p><%= link_to "Register My Student", new_student_path, class: "btn btn-primary btn-lg" %></p>
   </div>
 </div>
