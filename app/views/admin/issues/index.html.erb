@@ -1,50 +1,59 @@
-<h1>Interactions</h1>
+<div class="row">
 
-<h3>My Recent Interactions</h3>
-<div class="search">
-  <%= select_tag(:issues, options_for_select([['My recent interactions', 1], ['Open issues', 2], ['Closed issues', 3]]), class: "form-control", style: "display: inline-block") %>
-  <%= submit_tag("Go") %>
+  <h1 class="col-sm-12">Interactions</h1>
+
+  <div class="col-md-8">
+
+    <h3>My Recent Interactions</h3>
+    <div class="search">
+      <%= select_tag(:issues, options_for_select([['My recent interactions', 1], ['Open issues', 2], ['Closed issues', 3]]), class: "form-control", style: "display: inline-block") %>
+      <%= submit_tag("Go") %>
+    </div>
+    <table class="issues" style="width: 100%;">
+      <tr>
+        <td>Regarding</td>
+        <td>Owned By</td>
+        <td>Description</td>
+        <td>Last Event</td>
+        <td>Status</td>
+      </tr>
+
+      <%= render @issues %>
+    </table>
+  </div>
+
+  <div class="col-md-4">
+
+    <h3>Search</h3>
+    <%= form_tag(admin_issues_search_path, method: "get", style: "width: 200px") do %>
+      <div class="form-group">
+        <%= label_tag(:admin_id, "Owner") %>
+        <%= select_tag(:admin_id, options_for_select(User.admins.map { |user| [user.name, user.id] }), include_blank: true, class: "form-control") %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag(:student_name, "Student Name") %>
+        <%= text_field_tag(:student_name, nil, class: "form-control") %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag(:student_ips_id, "IPS Student ID") %>
+        <%= text_field_tag(:student_ips_id, nil, class: "form-control") %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag(:description, "Description") %>
+        <%= text_field_tag(:description, nil, class: "form-control") %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag(:status, "Issue Status") %>
+        <%= select_tag(:status, options_for_select(Issue.statuses.map { |status, value| [status, value] }), include_blank: true, class: "form-control") %>
+      </div>
+
+      <div>
+        <%= submit_tag("Search") %>
+      </div>
+    <% end %>
+  </div>
 </div>
-<table class="issues">
-  <tr>
-    <td>Regarding</td>
-    <td>Owned By</td>
-    <td>Description</td>
-    <td>Last Event</td>
-    <td>Status</td>
-  </tr>
-
-  <%= render @issues %>
-</table>
-
-<h3>Search</h3>
-<%= form_tag(admin_issues_search_path, method: "get", style: "width: 200px") do %>
-  <div class="form-group">
-    <%= label_tag(:admin_id, "Owner") %>
-    <%= select_tag(:admin_id, options_for_select(User.admins.map { |user| [user.name, user.id] }), include_blank: true, class: "form-control") %>
-  </div>
-
-  <div class="form-group">
-    <%= label_tag(:student_name, "Student Name") %>
-    <%= text_field_tag(:student_name, nil, class: "form-control") %>
-  </div>
-
-  <div class="form-group">
-    <%= label_tag(:student_ips_id, "IPS Student ID") %>
-    <%= text_field_tag(:student_ips_id, nil, class: "form-control") %>
-  </div>
-
-  <div class="form-group">
-    <%= label_tag(:description, "Description") %>
-    <%= text_field_tag(:description, nil, class: "form-control") %>
-  </div>
-
-  <div class="form-group">
-    <%= label_tag(:status, "Issue Status") %>
-    <%= select_tag(:status, options_for_select(Issue.statuses.map { |status, value| [status, value] }), include_blank: true, class: "form-control") %>
-  </div>
-
-  <div>
-    <%= submit_tag("Search") %>
-  </div>
-<% end %>
