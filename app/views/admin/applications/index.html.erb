@@ -1,8 +1,8 @@
 <h1>Applications</h1>
 
-<%= form_tag(admin_applications_search_path, method: "get") do %>
-  <div>
-    <%= text_field_tag(:student_name, @student_name, size: 25, placeholder: "Search by student name") %>
+<%= form_tag(admin_applications_search_path, method: "get", class: "search") do %>
+  <div class="form-group">
+    <%= text_field_tag(:student_name, @student_name, placeholder: "Search by student name", class: "form-control", style: "display: inline-block") %>
     <%= submit_tag("Search") %>
   </div>
 <% end %>
