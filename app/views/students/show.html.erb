@@ -1,15 +1,17 @@
-<div class="row">
-  <div class="col-sm-12">
-    <div class="thumbnail" style="float: right;">
-      <%= image_tag("ps9.jpg", width: 200) %>
-      <div class="caption">
-        Current School: PS9
+<div class="student-header">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="thumbnail" style="float: right;">
+        <%= image_tag("ps9.jpg", width: 200) %>
+        <div class="caption">
+          Current School: PS9
+        </div>
       </div>
-    </div>
-    <div class="page-header">
-      <h1><%= @student.full_name %>
-        <small>IPS ID: <%= @student.ips_id %></small>
-      </h1>
+      <div class="page-header">
+        <h1><%= @student.full_name %>
+          <small>IPS ID: <%= @student.ips_id %></small>
+        </h1>
+      </div>
     </div>
   </div>
 </div>
