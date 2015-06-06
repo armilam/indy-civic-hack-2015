@@ -11,22 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150606194726) do
+ActiveRecord::Schema.define(version: 20150606195319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "applications", force: :cascade do |t|
-    t.integer "student_id"
-    t.string  "wl_building"
-    t.string  "wl_program"
-    t.integer "status"
-    t.integer "priority"
-    t.integer "random"
-    t.string  "current_building"
-    t.string  "current_program"
-    t.integer "current_status"
-    t.integer "select_number"
+    t.integer  "student_id"
+    t.string   "wl_building"
+    t.string   "wl_program"
+    t.integer  "status"
+    t.integer  "priority"
+    t.integer  "random"
+    t.string   "current_building"
+    t.string   "current_program"
+    t.integer  "current_status"
+    t.integer  "select_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "attachments", force: :cascade do |t|
@@ -35,6 +37,8 @@ ActiveRecord::Schema.define(version: 20150606194726) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "events", force: :cascade do |t|
@@ -44,31 +48,39 @@ ActiveRecord::Schema.define(version: 20150606194726) do
     t.integer  "admin_id"
     t.string   "description"
     t.datetime "happened_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "issues", force: :cascade do |t|
-    t.integer "owner_admin_id"
-    t.string  "description"
-    t.integer "status"
-    t.integer "subject_id"
-    t.string  "subject_type"
+    t.integer  "owner_admin_id"
+    t.string   "description"
+    t.integer  "status"
+    t.integer  "subject_id"
+    t.string   "subject_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "students", force: :cascade do |t|
-    t.string  "ips_id"
-    t.string  "first_name"
-    t.string  "middle_name"
-    t.string  "last_name"
-    t.date    "birthdate"
-    t.string  "address"
-    t.integer "grade"
-    t.string  "school"
+    t.integer  "ips_id"
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.date     "birthdate"
+    t.string   "address"
+    t.integer  "grade"
+    t.string   "school"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "user_students", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "student_id"
-    t.string  "relationship"
+    t.integer  "user_id"
+    t.integer  "student_id"
+    t.string   "relationship"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
