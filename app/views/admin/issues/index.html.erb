@@ -2,7 +2,7 @@
   Create new issue
 </div>
 
-<%= form_tag("/search", method: "get") do %>
+<%= form_tag(admin_issues_search_path, method: "get") do %>
   <div>
     <%= label(nil, "Search by:") %>
   </div>
@@ -10,11 +10,6 @@
   <div>
     <%= label_tag(:admin_id, "Owner") %>
     <%= select_tag(:admin_id, options_for_select(User.admins.map { |user| [user.name, user.id] }), include_blank: true) %>
-  </div>
-
-  <div>
-    <%= label_tag(:user_name, "Caller Name") %>
-    <%= text_field_tag(:user_name) %>
   </div>
 
   <div>
@@ -33,7 +28,7 @@
   </div>
 
   <div>
-    <%= label_tag(:status, "Status") %>
+    <%= label_tag(:status, "Issue Status") %>
     <%= select_tag(:status, options_for_select(Issue.statuses.map { |status, value| [status, value] }), include_blank: true) %>
   </div>
 

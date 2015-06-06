@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :students
 
   namespace :admin do
+    scope :issues do
+      get :search, to: "issues#search", as: :issues_search
+    end
+
     resources :issues
   end
 end
