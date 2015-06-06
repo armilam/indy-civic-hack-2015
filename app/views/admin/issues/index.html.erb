@@ -1,10 +1,7 @@
 <h1>Issues</h1>
 
+<h3>Search</h3>
 <%= form_tag(admin_issues_search_path, method: "get") do %>
-  <div>
-    <%= label(nil, "Search by:") %>
-  </div>
-
   <div>
     <%= label_tag(:admin_id, "Owner") %>
     <%= select_tag(:admin_id, options_for_select(User.admins.map { |user| [user.name, user.id] }), include_blank: true) %>
@@ -34,3 +31,18 @@
     <%= submit_tag("Search") %>
   </div>
 <% end %>
+
+<h3>My Recent Issues</h3>
+<%= select_tag(:issues, options_for_select([['My recent issues', 1], ['Open issues', 2], ['Closed issues', 3]])) %>
+<%= submit_tag("Go") %>
+<table class="search-results issues">
+  <thead>
+    <td>Regarding</td>
+    <td>Owned By</td>
+    <td>Description</td>
+    <td>Last Event</td>
+    <td>Status</td>
+  </thead>
+
+  <%= render @issues %>
+</table>

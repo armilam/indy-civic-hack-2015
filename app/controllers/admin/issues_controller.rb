@@ -1,6 +1,7 @@
 class Admin::IssuesController < Admin::ApplicationController
 
   def index
+    @issues = Issue.where(owner: current_user)
   end
 
   def show
