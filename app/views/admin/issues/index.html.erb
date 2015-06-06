@@ -1,1 +1,43 @@
-ISSUES
+<div>
+  Create new issue
+</div>
+
+<%= form_tag("/search", method: "get") do %>
+  <div>
+    <%= label(nil, "Search by:") %>
+  </div>
+
+  <div>
+    <%= label_tag(:admin_id, "Owner") %>
+    <%= select_tag(:admin_id, options_for_select(User.admins.map { |user| [user.name, user.id] }), include_blank: true) %>
+  </div>
+
+  <div>
+    <%= label_tag(:user_name, "Caller Name") %>
+    <%= text_field_tag(:user_name) %>
+  </div>
+
+  <div>
+    <%= label_tag(:student_name, "Student Name") %>
+    <%= text_field_tag(:student_name) %>
+  </div>
+
+  <div>
+    <%= label_tag(:student_ips_id, "IPS Student ID") %>
+    <%= text_field_tag(:student_ips_id) %>
+  </div>
+
+  <div>
+    <%= label_tag(:description, "Description") %>
+    <%= text_field_tag(:description) %>
+  </div>
+
+  <div>
+    <%= label_tag(:status, "Status") %>
+    <%= select_tag(:status, options_for_select(Issue.statuses.map { |status, value| [status, value] }), include_blank: true) %>
+  </div>
+
+  <div>
+    <%= submit_tag("Search") %>
+  </div>
+<% end %>

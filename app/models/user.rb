@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :user_students
   has_many :students, through: :user_students
+
+  scope :admins, -> { where(admin: true) }
 end

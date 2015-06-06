@@ -1,4 +1,7 @@
 class Issue < ActiveRecord::Base
+
+  enum status: %w(active resolved)
+
   has_many :events
   belongs_to :owner, foreign_key: :owner_admin_id
 
