@@ -13,7 +13,7 @@ class ApplicationsController < ApplicationController
       redirect_to @student, flash: { notice: "New application added!" }
     else
       flash[:warning] = "Sorry, there was an error with your submission."
-      render "form"
+      render "new"
     end
   end
 
