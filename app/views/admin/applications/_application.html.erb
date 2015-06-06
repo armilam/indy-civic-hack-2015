@@ -1,6 +1,6 @@
 <tr data-href="<%= student_path(application.student) %>">
   <td><%= application.student.full_name %></td>
-  <td><%= application.wl_building %></td>
-  <td><%= application.wl_program %></td>
-  <td><%= application.current_status %></td>
+  <td><%= application.current_building %></td>
+  <td><%= application.current_program %></td>
+  <td><%= application.current_status || "Pending" %></td>
 </tr>
