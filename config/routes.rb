@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :students
 
   namespace :admin do
-    resources :dashboard, only: [:index]
     resources :issues
   end
 end
