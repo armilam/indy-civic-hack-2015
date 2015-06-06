@@ -1,2 +1,12 @@
 <h1>Applications</h1>
-<%= render partial: 'applications/application', collection: @applications %>
+
+<table class="applications">
+  <thead>
+    <td>Student</td>
+    <td>Building</td>
+    <td>Program</td>
+    <td>Status</td>
+  </thead>
+
+  <%= render @applications %>
+</table>

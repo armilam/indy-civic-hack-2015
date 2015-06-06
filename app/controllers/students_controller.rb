@@ -5,7 +5,11 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = current_user.students.find(params[:id])
+    @student = if current_user.admin?
+      Student.find(params[:id])
+    else
+      current_user.students.find(params[:id])
+    end
   end
 
   def new
