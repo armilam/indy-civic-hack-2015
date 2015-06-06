@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: "students#index"
+  root to: "home#index"
   devise_for :users
   resources :users, only: [:new, :create]
   resources :students
