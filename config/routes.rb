@@ -13,5 +13,11 @@ Rails.application.routes.draw do
     end
 
     resources :issues
+
+    scope :applications do
+      get :search, to: "applications#search", as: :applications_search
+    end
+
+    resources :applications
   end
 end
