@@ -1,10 +1,12 @@
 <%= simple_form_for @student do |f| %>
-  <%= f.input :ips_id %>
-  <%= f.input :first_name %>
-  <%= f.input :middle_name %>
-  <%= f.input :last_name %>
-  <%= f.input :birthdate %>
-  <%= f.input :address %>
-  <%= f.input :grade %>
-  <%= f.input :school %>
+  <p>Please enter your student’s IPS Student ID and birthdate.</p>
+  <div class="form-group">
+    <%= f.input :ips_id, label: "IPS Student ID", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.input :birthdate, start_year: Date.current.year - 2, end_year: Date.current.year - 25, required: true %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
 <% end %>
