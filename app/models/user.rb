@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   has_many :students, through: :user_students
 
   scope :admins, -> { where(admin: true) }
+  scope :not_admins, -> { where(admin: false) }
 end
