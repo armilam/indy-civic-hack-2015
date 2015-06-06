@@ -3,6 +3,11 @@ class Admin::IssuesController < Admin::ApplicationController
   def index
   end
 
+  def show
+    @issue = Issue.find(params[:id])
+    @events = @issue.events.in_order
+  end
+
   def search
     @issues = Issue.all
     @issues = @issues.joins("JOIN students ON students.id = issues.subject_id AND issues.subject_type = 'Student'") if should_join_students?

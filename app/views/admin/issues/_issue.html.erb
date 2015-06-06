@@ -1,0 +1,14 @@
+<tr data-href="<%= admin_issue_path(issue) %>">
+  <td>
+    <% if issue.subject.is_a? Student %>
+      <%= issue.subject.ips_id %> - <%= issue.subject.full_name %>
+    <% elsif issue.subject.is_a? Application %>
+      <%= issue.subject.student.ips_id %> - <%= issue.subject.student.full_name %> (Application)
+    <% end %>
+  </td>
+
+  <td><%= issue.owner.name %></td>
+  <td><%= issue.description %></td>
+  <td><%= issue.events.in_order.first.try(:happened_at) %></td>
+  <td><%= issue.status %></td>
+</tr>

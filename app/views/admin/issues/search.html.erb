@@ -6,20 +6,6 @@
     <td>Last Event</td>
     <td>Status</td>
   </thead>
-  <% @issues.each do |issue| %>
-    <tr>
-      <% if issue.subject.is_a? Student %>
-        <td><%= issue.subject.ips_id %> - <%= issue.subject.full_name %></td>
-      <% elsif issue.subject.is_a? Application %>
-        <td><%= issue.subject.student.ips_id %> - <%= issue.subject.student.full_name %> (Application)</td>
-      <% else %>
-        <td></td>
-      <% end %>
 
-      <td><%= issue.owner.name %></td>
-      <td><%= issue.description %></td>
-      <td><%= issue.events.in_order.first.try(:happened_at) %></td>
-      <td><%= issue.status %></td>
-    </tr>
-  <% end %>
+  <%= render @issues %>
 </table>
