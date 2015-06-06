@@ -1,4 +1,4 @@
 <li class="list-item">
-  <h4>Current Application</h4>
-  <br><small>Created <%= time_ago_in_words(application.created_at) %> ago</small>
+  <h4><%= application.current_building %>: <%= application.current_program %></h4>
+  <small>In Progress • Created <%= time_ago_in_words(application.created_at) %> ago</small>
 </li>

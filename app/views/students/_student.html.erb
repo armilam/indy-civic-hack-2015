@@ -1,4 +1,4 @@
 <li class="list-item">
   <h3><%= link_to student.full_name, student %></h3>
-  <p>0 applications in progress
+  <p><%= pluralize(student.applications.count, "application") %> in progress
 </li>
