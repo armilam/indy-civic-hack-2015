@@ -27,6 +27,6 @@
     <ul>
       <%= render @student.applications %>
     </ul>
-    <p><%= link_to "Begin a New Application", new_student_path, class: "btn btn-primary" %></p>
+    <p><%= link_to "Begin a New Application", new_student_application_path(@student), class: "btn btn-primary" %></p>
   </div>
 </div>
