@@ -1,0 +1,31 @@
+<h3>Search</h3>
+<%= form_tag(admin_issues_search_path, method: "get", style: "width: 200px") do %>
+  <div class="form-group">
+    <%= label_tag(:admin_id, "Owner") %>
+    <%= select_tag(:admin_id, options_for_select(User.admins.map { |user| [user.name, user.id] }), include_blank: true, class: "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag(:student_name, "Student Name") %>
+    <%= text_field_tag(:student_name, nil, class: "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag(:student_ips_id, "IPS Student ID") %>
+    <%= text_field_tag(:student_ips_id, nil, class: "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag(:description, "Description") %>
+    <%= text_field_tag(:description, nil, class: "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag(:status, "Issue Status") %>
+    <%= select_tag(:status, options_for_select(Issue.statuses.map { |status, value| [status, value] }), include_blank: true, class: "form-control") %>
+  </div>
+
+  <div>
+    <%= submit_tag("Search") %>
+  </div>
+<% end %>

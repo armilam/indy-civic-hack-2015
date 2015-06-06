@@ -1,13 +1,22 @@
-<h1>Search Results</h1>
+<div class="row">
+  <h1 class="col-sm-12">Search Results</h1>
 
-<table class="search-results issues">
-  <tr>
-    <td>Regarding</td>
-    <td>Owned By</td>
-    <td>Description</td>
-    <td>Last Event</td>
-    <td>Status</td>
-  </tr>
+  <div class="col-md-8">
 
-  <%= render @issues %>
-</table>
+    <table class="search-results issues fullwidth">
+      <tr>
+        <td>Regarding</td>
+        <td>Owned By</td>
+        <td>Description</td>
+        <td>Last Event</td>
+        <td>Status</td>
+      </tr>
+
+      <%= render @issues %>
+    </table>
+  </div>
+
+  <div class="col-md-4">
+    <%= render "sidebar" %>
+  </div>
+</div>
