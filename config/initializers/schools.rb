@@ -1,4 +1,5 @@
 SCHOOLS = [
+  'Choose a School'
   'Anna Brochhausen School 88',
   'Arlington Woods School 99',
   'Arsenal Technical High School',
@@ -62,6 +63,7 @@ SCHOOLS = [
 ]
 
 PROGRAMS = [
+  'Choose a Program'
   'Red',
   'Orange',
   'Yellow',

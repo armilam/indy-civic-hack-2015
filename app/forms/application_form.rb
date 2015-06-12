@@ -33,15 +33,15 @@ class ApplicationForm
 
   def persist!
     ActiveRecord::Base.transaction do
-      if first_choice_building && first_choice_program
+      if first_choice_building != 'Choose a School' && first_choice_program != 'Choose a Program'
         @student.applications.create(current_building: first_choice_building,
                                      current_program: first_choice_program)
       end
-      if second_choice_building && second_choice_program
+      if second_choice_building != 'Choose a School' && second_choice_program != 'Choose a Program'
         @student.applications.create(current_building: second_choice_building,
                                      current_program: second_choice_program)
       end
-      if third_choice_building && third_choice_program
+      if third_choice_building != 'Choose a School' && third_choice_program != 'Choose a Program'
         @student.applications.create(current_building: third_choice_building,
                                      current_program: third_choice_program)
       end
