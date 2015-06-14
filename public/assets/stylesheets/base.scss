@@ -1,0 +1,44 @@
+body {
+  font-family: Lato, sans-serif !important;
+}
+
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+
+.navbar-brand {
+  img {
+    max-width: 100px;
+  }
+}
+
+[role="main"] {
+  padding-top: 40px;
+}
+
+dd {
+  margin-bottom: 1em;
+}
+
+.unstyled-list {
+  list-style: none;
+  padding: 0;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.site-footer {
+  text-align: center;
+  color: #ccc;
+}
+
+.navbar-toggle {
+  background-color: rgba(0,0,0,.1) !important;
+
+  .icon-bar {
+    background-color: #428bca;
+  }
+}
