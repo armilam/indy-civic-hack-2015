@@ -1,7 +1,11 @@
 class Admin::StudentsController < Admin::ApplicationController
 
   def index
-    @students = current_user.students
+    @students = if current_user.admin?
+      Student.all
+    else
+      current_user.students
+    end
   end
 
   def show
@@ -10,6 +14,14 @@ class Admin::StudentsController < Admin::ApplicationController
     else
       current_user.students.find(params[:id])
     end
+  end
+
+  def search
+    @students = Student.where("(students.first_name || ' ' || students.middle_name || ' ' || students.last_name) ilike :student_name", student_name: "%#{params[:student_name]}%")
+
+    @student_name = params[:student_name]
+
+    render :index
   end
 
   def new

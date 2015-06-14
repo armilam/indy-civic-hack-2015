@@ -10,7 +10,7 @@ class Application < ActiveRecord::Base
     when 2
       "Accepted"
     when 3
-      position = Application.where("building = ? AND program = ?", self.building, self.program).order("random asc").pluck(:id).index(self.id)
+      position = Application.where("building = ? AND program = ? AND status = 3", self.building, self.program).order("random asc").pluck(:id).index(self.id)
       "Waitlist Position: #{position}"
     when 4
       "Not Accepted"
