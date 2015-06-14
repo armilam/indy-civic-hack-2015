@@ -20,8 +20,6 @@ module RailsDevise
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
-    config.serve_static_assets = true
-
     config.autoload_paths << "#{config.root}/app/forms"
 
     # Settings in config/environments/* take precedence over those specified here.
