@@ -20,8 +20,6 @@ module RailsDevise
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
-    config.assets.precompile += %w( .svg .eot .woff .ttf .png .jpg .gif)
-
     config.autoload_paths << "#{config.root}/app/forms"
 
     # Settings in config/environments/* take precedence over those specified here.
