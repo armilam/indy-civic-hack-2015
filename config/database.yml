@@ -12,3 +12,9 @@ default: &default
 development:
   <<: *default
   database: ips_magnet
+
+production:
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  database: ips_magnet
