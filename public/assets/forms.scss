@@ -1,0 +1,16 @@
+.search .form-control {
+  width: 250px;
+}
+
+.form-control.date {
+  width: auto;
+  display: inline-block;
+}
+
+label.date {
+  display: block;
+}
+
+.field_with_errors {
+  color: #a94442;
+}

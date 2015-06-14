@@ -1,0 +1,29 @@
+table {
+  border: 1px solid gray;
+  margin-bottom: 24px;
+  margin-top: 6px;
+
+  tr:nth-child(1) {
+    border-bottom: 1px solid black;
+  }
+
+  tr:nth-child(even) {
+    background: #DDDDDD;
+  }
+
+  tr:nth-child(odd) {
+    background: #CCCCCC;
+  }
+
+  tr:hover td {
+    background: #EEEEEE;
+  }
+
+  tr:nth-child(1):hover td {
+    background: #CCCCCC;
+  }
+
+  td {
+    padding: 4px 8px;
+  }
+}
